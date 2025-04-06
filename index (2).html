@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="dark-mode">
+  <div class="container">
+    <header>
+      <h1>Hi, I'm BALA CHANDER</h1>
+      <p class="tagline">Frontend Developer | Web Enthusiast</p>
+      <p id="clock"></p>
+      <button onclick="toggleMode()">Toggle Mode</button>
+    </header>
+
+    <section id="bio">
+      <h2>About Me</h2>
+      <textarea id="bioInput" maxlength="100" placeholder="Write a short bio (max 100 characters)..."></textarea>
+      <p id="bioCharCount">0 / 100</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills (Type and press Enter - max 5)</h2>
+      <p id="skillCount">0 selected</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <!-- Text Classification with Emoji -->
+      <div class="project-card" onclick="toggleView('emojiClassifier')">
+        <h3>Text Classifier</h3>
+        <p>Classify your mood and see emoji response!</p>
+      </div>
+      <div id="emojiClassifier" class="project-content">
+        <input type="text" id="textInput" placeholder="Enter your text" />
+        <button onclick="classifyText()">Analyze</button>
+        <p id="emojiResult"></p>
+      </div>
+
+      <!-- Todo App -->
+      <div class="project-card" onclick="toggleView('todoApp')">
+        <h3>Todo App</h3>
+        <p>Manage your tasks with ease</p>
+      </div>
+      <div id="todoApp" class="project-content">
+        <input type="text" id="todoInput" placeholder="Enter a task" />
+        <button onclick="addTodo()">Add Task</button>
+        <ul id="todoList"></ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form onsubmit="return sendMessage()">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea id="message" placeholder="Your Message (max 200 characters)" maxlength="200" required></textarea>
+        <p id="messageCount">0 / 200</p>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
